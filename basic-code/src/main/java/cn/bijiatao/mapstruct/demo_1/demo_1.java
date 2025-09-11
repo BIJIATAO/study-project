@@ -6,6 +6,8 @@ import cn.bijiatao.mapstruct.model.PersonDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 
+import java.time.LocalDate;
+
 /**
  * beanutils 的 基础实现
  *
@@ -24,12 +26,14 @@ public class demo_1 {
         address.setCity("深圳市");
         address.setArea("南山区");
         person.setAddress(address);
+        person.setBirthday(LocalDate.now());
         Person.description = "这是Person描述";
 
         PersonDTO personDTO = new PersonDTO();
         personDTO.setName("李四");
         personDTO.setAge(81);
         personDTO.setSex('女');
+        personDTO.setBirthday(null);
         PersonDTO.description = "这是PersonDTO描述";
 
         // 赋值

@@ -1,7 +1,11 @@
 package cn.bijiatao.mapstruct.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * source类
@@ -29,6 +33,12 @@ public class Person {
      * 地址
      */
     private Address address;
+
+    /**
+     * 生日
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private LocalDate birthday;
 
     /**
      * 描述

@@ -30,6 +30,11 @@ public class PersonDTO {
     private Address address;
 
     /**
+     * 生日
+     */
+    private String birthday;
+
+    /**
      * 描述
      */
     public static String description;
