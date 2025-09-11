@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * source类
@@ -39,6 +39,11 @@ public class Person {
      */
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private LocalDate birthday;
+
+    /**
+     * 爱好
+     */
+    private List<String> hobbyList;
 
     /**
      * 描述

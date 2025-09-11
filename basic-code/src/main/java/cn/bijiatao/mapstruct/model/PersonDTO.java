@@ -2,6 +2,8 @@ package cn.bijiatao.mapstruct.model;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * target类
  *
@@ -32,7 +34,12 @@ public class PersonDTO {
     /**
      * 生日
      */
-    private String birthday;
+    private String myBirthday;
+
+    /**
+     * 爱好
+     */
+    private List<String> hobbyList;
 
     /**
      * 描述
