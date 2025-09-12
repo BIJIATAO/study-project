@@ -35,6 +35,11 @@ public class Person {
     private Address address;
 
     /**
+     * 身份证
+     */
+    private String idCard;
+
+    /**
      * 生日
      */
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")

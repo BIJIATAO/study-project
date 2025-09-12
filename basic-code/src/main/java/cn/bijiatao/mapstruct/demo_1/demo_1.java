@@ -33,6 +33,7 @@ public class demo_1 {
         hobbyList.add("看电影");
         hobbyList.add("听音乐");
         person.setHobbyList(hobbyList);
+        person.setIdCard("110101199001011234");
         Person.description = "这是Person描述";
 
         PersonDTO personDTO = new PersonDTO();

@@ -37,6 +37,11 @@ public class PersonDTO {
     private String myBirthday;
 
     /**
+     * 身份证
+     */
+    private Long idNo;
+
+    /**
      * 爱好
      */
     private List<String> hobbyList;
