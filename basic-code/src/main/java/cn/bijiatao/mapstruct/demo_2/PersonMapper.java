@@ -5,7 +5,8 @@ import cn.bijiatao.mapstruct.model.PersonDTO;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * mapstruct 映射
@@ -25,7 +26,8 @@ public interface PersonMapper {
     PersonDTO toPersonDTO(Person person);
 
     @Named("toStringBirthday")
-    default String toStringBirthday(LocalDate birthday) {
-        return birthday.toString();
+    default String toStringBirthday(LocalDateTime birthday) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return birthday.format(formatter);
     }
 }

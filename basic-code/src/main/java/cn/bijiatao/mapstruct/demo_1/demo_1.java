@@ -6,7 +6,7 @@ import cn.bijiatao.mapstruct.model.PersonDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class demo_1 {
         address.setCity("深圳市");
         address.setArea("南山区");
         person.setAddress(address);
-        person.setBirthday(LocalDate.now());
+        person.setBirthday(LocalDateTime.now());
         List<String> hobbyList = new ArrayList<>();
         hobbyList.add("看电影");
         hobbyList.add("听音乐");
