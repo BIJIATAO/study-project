@@ -3,6 +3,11 @@ package cn.bijiatao.aop.annotation;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
+/**
+ * 注解测试类
+ *
+ * @author bijiatao
+ */
 public class AnnotationDemo {
     public static void main(String[] args) throws Exception {
         // 获取UserService的Class对象
