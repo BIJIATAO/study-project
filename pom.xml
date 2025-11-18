@@ -21,6 +21,8 @@
     <spring-cloud.version>2023.0.0</spring-cloud.version>
     <spring-cloud-alibaba.version>2023.0.1.2</spring-cloud-alibaba.version>
     <spring-web.version>6.1.3</spring-web.version>
+    <spring-aspectjweaver.version>1.9.7</spring-aspectjweaver.version>
+    <spring-aspectj.version>6.1.3</spring-aspectj.version>
 
     <!-- 数据访问 -->
     <jedis.version>2.9.0</jedis.version>
@@ -85,6 +87,18 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
         <version>${spring-boot.version}</version>
+      </dependency>
+      <!-- AOP 织入器（cglib 代理依赖） -->
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${spring-aspectjweaver.version}</version>
+      </dependency>
+      <!-- Spring 上下文（IOC 容器核心） -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring-aspectj.version}</version>
       </dependency>
       <!-- Spring AOP-->
       <dependency>
