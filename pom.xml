@@ -21,6 +21,8 @@
     <spring-cloud.version>2023.0.0</spring-cloud.version>
     <spring-cloud-alibaba.version>2023.0.1.2</spring-cloud-alibaba.version>
     <spring-web.version>6.1.3</spring-web.version>
+    <spring-aspectjweaver.version>1.9.7</spring-aspectjweaver.version>
+    <spring-aspectj.version>6.1.3</spring-aspectj.version>
 
     <!-- 数据访问 -->
     <jedis.version>2.9.0</jedis.version>
@@ -34,9 +36,6 @@
     <fastjson2.version>2.0.42</fastjson2.version>
     <guava.version>32.1.3-jre</guava.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
-
-    <!-- 新增：Lombok 与 MapStruct 协作的绑定包版本 -->
-    <lombok-mapstruct-binding.version>0.3.0</lombok-mapstruct-binding.version>
 
     <!-- 中间件 -->
     <rocketmq-client.version>5.3.0</rocketmq-client.version>
@@ -87,6 +86,24 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+      <!-- AOP 织入器（cglib 代理依赖） -->
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${spring-aspectjweaver.version}</version>
+      </dependency>
+      <!-- Spring 上下文（IOC 容器核心） -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring-aspectj.version}</version>
+      </dependency>
+      <!-- Spring AOP-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
         <version>${spring-boot.version}</version>
       </dependency>
 
@@ -195,12 +212,6 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
-              </path>
-              <!-- 协调 Lombok 和 MapStruct 的绑定包：用父 POM 新增的 ${lombok-mapstruct-binding.version}（0.3.0） -->
-              <path>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok-mapstruct-binding</artifactId>
-                <version>${lombok-mapstruct-binding.version}</version>
               </path>
             </annotationProcessorPaths>
           </configuration>
