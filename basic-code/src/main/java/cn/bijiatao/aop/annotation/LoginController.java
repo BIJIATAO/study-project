@@ -19,7 +19,7 @@ public class LoginController {
     private UserLoginService userLoginService;
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam(value = "email", required = false) String email) {
+    public String login(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam(name = "email", required = false) String email) {
         return userLoginService.login(username, password, email);
     }
 

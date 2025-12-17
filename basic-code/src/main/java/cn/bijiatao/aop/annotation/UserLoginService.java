@@ -15,7 +15,7 @@ public class UserLoginService {
     public String login(
             @MyParamAnnotation(required = true) String username,
             @MyParamAnnotation(required = true) String password,
-            @MyParamAnnotation(required = false) String email
+            @MyParamAnnotation(required = true) String email
     ) {
         // 业务逻辑
         return "登录成功：" + username;
