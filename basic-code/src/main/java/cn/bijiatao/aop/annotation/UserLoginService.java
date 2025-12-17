@@ -13,9 +13,9 @@ public class UserLoginService {
     // public方法，带方法注解和参数注解
     @MyMethodAnnotation(desc = "用户登录方法", version = 2)
     public String login(
-            String username,
-            String password,
-            String email
+            @MyParamAnnotation(required = true) String username,
+            @MyParamAnnotation(required = true) String password,
+            @MyParamAnnotation(required = false) String email
     ) {
         // 业务逻辑
         return "登录成功：" + username;
